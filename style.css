@@ -1,0 +1,333 @@
+@import url('https://fonts.googleapis.com/css2?family=Agdasima:wght@400;700&family=Arima:wght@100..700&family=Prociono&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Agdasima:wght@400;700&family=Arima:wght@100..700&family=DynaPuff:wght@400..700&family=Prociono&display=swap');
+
+html{
+    scroll-behavior: smooth;
+}
+
+:root{
+    --light: #eaecee;
+    --color-text: #3c3e41;
+    --box-shadow: 
+    5px 5px 15px #c1c8d3, 
+    -5px -5px 15px #ffffff;
+    --gradient-bg: linear-gradient(-45deg, #D000F7, #24BAE3);
+}
+
+a{
+    color: #3c3e41;
+    text-decoration: none;
+}
+
+body{
+    margin: 0;
+    color: var(--color-text);
+    font-family: "Prociono", serif;
+    font-size: 15px;
+    overflow-x: hidden;
+}
+
+.navbar {
+    font-family: "Prociono", serif;
+}
+
+.container{
+    width: 1200px;
+    max-width: 90%;
+    margin: auto;
+}
+.banner{
+    margin-top: 150px;
+    display: grid;
+    grid-template-columns: 60% 40%;
+    border-bottom: 1px solid #dce1e4;
+    padding-bottom: 50px;
+}
+.banner .content{
+    text-align: justify;
+    padding-right: 50px;
+    font-family: "Prociono", serif;
+}
+.banner .content h1{
+    font-size: 4.5em;
+    margin: -1rem;
+    font-family: "DynaPuff", system-ui;
+}
+
+.banner .content p:nth-child(3) {
+    margin-top: 2rem;
+}
+.gradientText{
+  display: inline-block;
+    background: var(--gradient-bg);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.job{
+   display: inline-block;
+}
+.job::before{
+    content: attr(data-job1);
+    overflow: hidden;
+    display: inline-flex;
+    animation: effectText 1s linear infinite alternate,
+    changeText 4s linear infinite;
+}
+
+@keyframes effectText{
+    from{
+        max-width: 0;
+    }to{
+        max-width: 500px;
+    }
+}
+@keyframes changeText{
+    from{
+        content: attr(data-job1);
+    }
+    to{
+        content: attr(data-job2);
+    }
+}
+
+.find{
+    margin-top: 50px;
+}
+.find ul{
+    padding: 0;
+    list-style: none;
+    display: flex;
+}
+.find ul li{
+    width: 50px;
+    height: 50px;
+    box-shadow: var(--box-shadow);
+    margin: 10px;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: 0.5s;
+}
+
+.find ul li a {
+    color: grey;
+}
+.find ul li:hover{
+    color: #fff;
+    background-image: var(--gradient-bg);
+}
+.banner .avatar{
+    position: relative;
+    height: max-content;
+    text-align: center;
+
+}
+
+.banner img{
+    position: relative;
+    right: 20rem;
+    top: -1rem;
+    height: 200%;
+    width: 300%;
+}
+
+.title{
+    text-align: center;
+    padding-top: 100px;
+    font-family: "Prociono", serif;
+}
+.listSkill{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px 20px;
+    border-bottom: 1px solid #dce1e4;
+    padding-bottom: 50px;
+    font-family: "Prociono", serif;
+}
+.listSkill .evaluate{
+    width: 100%;
+    height: 20px;
+    box-shadow: var(--box-shadow);
+    border-radius: 10px;
+    margin-top: 20px;
+    position: relative;
+
+}
+
+.listSkill :nth-child(1) .evaluate {
+
+}
+
+
+.listSkill .evaluate::before{
+    position: absolute;
+    height: 100%;
+    width: var(--point);
+    background-image: var(--gradient-bg);
+    content: '';
+    border-radius: 10px;
+}
+.listProject{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    border-bottom: 1px solid #dce1e4;
+    padding-bottom: 50px;
+    font-family: "Prociono", serif;
+}
+.listProject .item{
+    text-align: center;
+    box-shadow: var(--box-shadow);
+    padding: 20px;
+}
+
+
+.listProject .item img{
+    width: 90%;
+    border-radius: 20px;
+}
+
+.listProject , .item video{
+    width: 100%;
+    border-radius: 20px;
+}
+.listProject .item{
+    text-align: center;
+    border-radius: 10px;
+    font-weight: bold;
+    font-size: large;
+}
+.social{
+    padding: 0;
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 50px;
+    font-family: "Prociono", serif;
+}
+.social li{
+    width: 50px;
+    height: 50px;
+    margin: 20px;
+    box-shadow: var(--box-shadow);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 5px;
+    transition: 0.5s;
+}
+
+.social li a {
+    color: grey;
+}
+.social li:hover{
+    background-image: var(--gradient-bg);
+    color: #fff;
+}
+
+.call {
+    position: relative;
+    left: 25rem;
+    bottom: 10rem;
+    display: flex;
+    gap: 5rem;
+}
+/* Desktops and laptops ----------- */
+@media  screen and (min-width:767px) {
+    
+    .navbar {
+        height: 10rem;
+    }
+    .navbar .nav-item .nav-link {
+        font-size: 1.5rem;
+        margin: 5rem;
+        position: relative;
+        top: 2rem;
+    }
+
+    .navbar .nav-item .nav-link::after {
+        content: '';
+        position: absolute;
+        width: 1470px;
+        height: 2px;
+        background-color: silver;
+        left: -5rem;
+        top: 4.5rem;
+    }
+
+    .navbar .nav-item .nav-link:hover {
+        background-color: silver;
+    }
+
+	/* Styles */
+}
+/* iPads (portrait and landscape) ----------- */
+@media only screen and (max-width:1024px) {
+	/* Styles */
+    .banner{
+        grid-template-columns: 40% 60%;
+    }
+    .banner .content h1{
+        font-size: 2em;
+    }
+    .listProject{
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .call p {
+        position: relative;
+        left: -10rem;
+    }
+   
+}
+/* mobile */
+
+@media screen and (max-width: 767px){
+    body,html {
+        width: 100%;
+        height: 100%;
+        margin: 0;
+        padding: 0;
+        overflow-x: hidden;
+    }
+
+    .container {
+        position: relative;
+        top: -2rem;
+    }
+    .banner{
+        grid-template-columns: 1fr;
+    }
+    .banner .content h1{
+        font-size: 2em;
+    }
+    .banner .avatar{
+        grid-row-start: 1;
+    }
+ 
+    .banner .content{
+        padding-right: 0px;
+    }
+    .listSkill{
+        grid-template-columns: 1fr;
+    }
+    .listProject{
+        grid-template-columns: 1fr;
+    }
+
+  
+    .call {
+        display: block;
+        position: relative;
+        bottom: 10rem;
+        left: 3rem;
+    }
+
+    .call p {
+        position: relative;
+        left: 2rem;
+    }
+    
+}
